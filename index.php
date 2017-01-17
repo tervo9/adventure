@@ -16,6 +16,7 @@
  */
 if ($_GET['player_name'] == NULL):
 ?>
+<body background="img/Background.jpg">
 <form action="index.php">
 	<label>Vad heter du?</label>
 	<input type="text" name="player_name">
@@ -29,6 +30,7 @@ if ($_GET['player_name'] == NULL):
  */
 elseif ($_GET['page'] == 1):
 ?>
+<body background="img/Background.jpg">
 <h2>Hej <? echo $_GET['player_name'] ?></h2>
 <p>Du vaknar i ett krog efter en lång natt på fest. Du bestämer dig att gå hem.</p>
 <img src="img/Pub.jpg">
@@ -48,6 +50,7 @@ elseif ($_GET['page'] == 1):
  */
 elseif ($_GET['page'] == 2):
 ?>
+<body background="img/Background.jpg">
 <h2>Inne i taxin</h2>
 <p>Du har beställt din taxi och säger adressen som du ska till. Ni kommer fram och nu är det tid att betala.</p>
 <img src="img/taxi.jpg">
@@ -64,6 +67,7 @@ elseif ($_GET['page'] == 2):
 <?php
 elseif ($_GET['page'] == 3):
 ?>
+<body background="img/Background.jpg">
 <h2>Gatan</h2>
 <p>Du går på gatan och blir på körd. Game Over.</p>
 <img src="img/cat.jpg">
@@ -78,6 +82,7 @@ elseif ($_GET['page'] == 3):
 <?php
 elseif ($_GET['page'] == 4):
 ?>
+<body background="img/Background.jpg">
 <h2>Hemma</h2>
 <p>Du har kommit hem utan att dö. Grattis du har vunnit</p>
 <img src="img/hus.jpg">
@@ -94,9 +99,10 @@ elseif ($_GET['page'] == 4):
 <?php
 elseif ($_GET['page'] == 5):
 ?>
+<body background="img/Background.jpg">
 <h2>Inne i taxin</h2>
 <p>Du säger till chaffören att du inte har plånboken. Han ser arg ut och tar sitt vapen. Du blir skjuten. Game over</p>
-<img src="img/Gun.jpg">
+<img src="img/gun.jpg">
 <form action="index.php">
 	<label>Vill du börja om?</label><br>
 	<input type="radio" name="page" value="1" id="Ja">
