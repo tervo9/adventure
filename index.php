@@ -16,7 +16,7 @@
  */
 if ($_GET['player_name'] == NULL):
 ?>
-<form action="adventure_mall.php">
+<form action="index.php">
 	<label>Vad heter du?</label>
 	<input type="text" name="player_name">
 	<input type="hidden" name="page" value="1">
@@ -30,15 +30,14 @@ if ($_GET['player_name'] == NULL):
 elseif ($_GET['page'] == 1):
 ?>
 <h2>Hej <? echo $_GET['player_name'] ?></h2>
-<p>Du står i en skogsdunge. Till väster ser du en liten stuga med en rykande skorsten och österfrån rinner en liten flod. Norrut ser du bara träd.</p>
-<form action="adventure_mall.php">
-	<label>Åt vilket håll går du?</label><br>
-	<input type="radio" name="page" value="2" id="west">
-	<label for="west">Väster</label><br>
-	<input type="radio" name="page" value="3" id="north">
-	<label for="north">Norr</label><br>
-	<input type="radio" name="page" value="4" id="east">
-	<label for="east">Öster</label><br>
+<p>Du vaknar i ett krog efter en lång natt på fest. Du bestämer dig att gå hem.</p>
+<img src="img/Pub.jpg">
+<form action="index.php">
+	<label>Hur tänker du komma hem?</label><br>
+	<input type="radio" name="page" value="2" id="Taxi">
+	<label for="Taxi">Beställer taxi</label><br>
+	<input type="radio" name="page" value="3" id="Walk">
+	<label for="Walk">Jag går</label><br>
 	<input type="hidden" name="player_name" value="<?= $_GET['player_name'] ?>">
 	<input type="submit" value="Skicka">
 </form>
@@ -49,17 +48,61 @@ elseif ($_GET['page'] == 1):
  */
 elseif ($_GET['page'] == 2):
 ?>
-<h2>Stugan</h2>
-<p>Det ser inte ut som att någon är hemma.</p>
-<img src="img/hut.jpg">
-<form action="adventure_mall.php">
-	<label>Åt vilket håll går du?</label><br>
-	<input type="radio" name="page" value="5" id="west">
-	<label for="west">Väster</label><br>
-	<input type="radio" name="page" value="6" id="north">
-	<label for="north">Norr</label><br>
-	<input type="radio" name="page" value="7" id="east">
-	<label for="east">Öster</label><br>
+<h2>Inne i taxin</h2>
+<p>Du har beställt din taxi och säger adressen som du ska till. Ni kommer fram och nu är det tid att betala.</p>
+<img src="img/taxi.jpg">
+<form action="index.php">
+	<label>Vad gör du?</label><br>
+	<input type="radio" name="page" value="4" id="pay">
+	<label for="pay">Betala</label><br>
+	<input type="radio" name="page" value="5" id="lie">
+	<label for="lie">Ljug</label><br>
+	<input type="hidden" name="player_name" value="<?= $_GET['player_name'] ?>">
+	<input type="submit" value="Skicka">
+</form>
+
+<?php
+elseif ($_GET['page'] == 3):
+?>
+<h2>Gatan</h2>
+<p>Du går på gatan och blir på körd. Game Over.</p>
+<img src="img/cat.jpg">
+<form action="index.php">
+	<label>Börja om</label><br>
+	<input type="radio" name="page" value="1" id="Start">
+	<label for="Start">Start</label><br>
+	<input type="hidden" name="player_name" value="<?= $_GET['player_name'] ?>">
+	<input type="submit" value="Skicka">
+</form>
+
+<?php
+elseif ($_GET['page'] == 4):
+?>
+<h2>Hemma</h2>
+<p>Du har kommit hem utan att dö. Grattis du har vunnit</p>
+<img src="img/hus.jpg">
+<form action="index.php">
+	<label>Vill du börja om?</label><br>
+	<input type="radio" name="page" value="1" id="Ja">
+	<label for="Ja">Ja</label><br>
+	<input type="radio" name="page" value="1" id="Nej">
+	<label for="Nej">Nej</label><br>
+	<input type="hidden" name="player_name" value="<?= $_GET['player_name'] ?>">
+	<input type="submit" value="Skicka">
+</form>
+
+<?php
+elseif ($_GET['page'] == 5):
+?>
+<h2>Inne i taxin</h2>
+<p>Du säger till chaffören att du inte har plånboken. Han ser arg ut och tar sitt vapen. Du blir skjuten. Game over</p>
+<img src="img/Gun.jpg">
+<form action="index.php">
+	<label>Vill du börja om?</label><br>
+	<input type="radio" name="page" value="1" id="Ja">
+	<label for="Ja">Ja</label><br>
+	<input type="radio" name="page" value="1" id="Nej">
+	<label for="Nej">Nej</label><br>
 	<input type="hidden" name="player_name" value="<?= $_GET['player_name'] ?>">
 	<input type="submit" value="Skicka">
 </form>
